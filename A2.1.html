@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+     body {
+        font-family: system-ui, sans-serif;
+        padding: 20px;
+      }
+      .kartu {
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 320px;
+      }
+      button {
+        margin-top: 10px;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        background: #2563eb;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #1d4ed8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="kartu">
+        <h2 id="judul-kartu">Cek Kelulusan</h2>
+        <p class="deskripsi">Klik tombol untuk mengecek status kelulusan berdasarkan nilai ujian.</p>
+        <button id="btn-ubah">Cek Nilai</button>
+    </div>
+    <script>
+      const btn = document.getElementById("btn-ubah");
+      const judul = document.querySelector("#judul-kartu");
+      const deskripsi = document.querySelector(".deskripsi");
+      btn.addEventListener("click", () => {
+        const nilaiUjian = 75;
+        const status = nilaiUjian >= 60 ? "Lulus" : "Tidak Lulus";
+
+        judul.textContent = `Nilai ${nilaiUjian} -> ${status}`;
+        deskripsi.textContent =
+          "Status ini dihitung menggunakan operator ternary saat tombol diklik.";
+      });
+    </script>
+  </body>
+</html>
