@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TokoLab — Katalog Produk</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand-mark">
+      <div class="logo">T</div>
+      <div>
+        <h1 class="brand">TokoLab</h1>
+        <div class="brand-sub">Demo keranjang belanja yang bisa kamu coba</div>
+      </div>
+    </div>
+    <button class="cart-toggle" id="cartToggle" aria-label="Buka keranjang">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      Keranjang <span class="count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <div class="layout">
+
+    <section>
+      <h2 class="panel-title">Katalog produk</h2>
+      <div class="controls">
+        <div class="search-box">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="searchInput" placeholder="Cari nama produk...">
+        </div>
+        <select id="categoryFilter">
+          <option value="Semua">Semua kategori</option>
+        </select>
+        <select id="sortFilter">
+          <option value="default">Urutkan: Default</option>
+          <option value="price-asc">Harga terendah</option>
+          <option value="price-desc">Harga tertinggi</option>
+          <option value="name-asc">Nama A-Z</option>
+        </select>
+      </div>
+      <p class="result-count" id="resultCount"></p>
+      <div class="grid" id="productGrid"></div>
+    </section>
+
+    <div class="scrim" id="scrim"></div>
+    <aside class="cart-panel" id="cartPanel">
+      <div class="cart-panel-header">
+        <h2 class="panel-title" style="margin:0;">Keranjang</h2>
+        <button class="cart-close" id="cartClose">✕</button>
+      </div>
+
+      <div id="cartBody"></div>
+    </aside>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
